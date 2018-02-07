@@ -15,7 +15,7 @@ public class CheckingOrder {
 
 @BeforeMethod
 public void beforeMethod() {
-
+//syso
 System.out.println(" Before Method will execute before every test method");
 
 }

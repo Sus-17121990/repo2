@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-<parameter name="name" value="Susanta"></parameter>
+<!-- Parallel execution of classes -->
+<!-- <suite name="Suite" parallel="classes" thread-count="2" preserve-order="true">-->
+<!-- Parallel execution of methods -->
+<suite name="Suite" parallel="methods" thread-count="1" preserve-order="true">
+<!-- This is for generating report using reportNG and TestNG -->
+<listeners>
+      <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+      <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <listeners>
+		<listener class-name="com.ListenerClass" />
+  </listeners>
   <test name="Test">
+     <parameter name="firstName" value="Susanta"></parameter>
+     <parameter name="lastName" value="Mondal"></parameter>
+     <parameter name="browser" value="chrome"></parameter>
+     <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups>
     <classes>
-      <class name="com.TestNg">
-      <methods><include name="Test1"></include></methods>
+      <class name="com.TestBase">
+      <methods>
+      <!-- <include name="setBrowserName"></include> -->
+      <include name="getDriver"></include>
+      </methods>
       </class>
+      <class name="com.TestNGPractice">
+        <methods> 
+           <include name="method1"></include>
+           <include name="method3"></include>
+           <exclude name="method2"></exclude>
+        </methods>
+      </class>
+      <class name="com.TestNGPractice1">
+        <methods>
+           <parameter name="gender" value="Male"></parameter>
+           <include name="method1"></include>
+           <!--  <include name="method3"></include>-->
+           <include name="method4"></include>
+           <exclude name="method2"></exclude>
+        </methods>
+      </class>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

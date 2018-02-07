@@ -24,7 +24,7 @@ public class TestBase {
 		System.out.println(webBrowser);
 		  
 		if(webBrowser.equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "F:\\workspace\\TestNGPractice\\drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "G:\\workspace\\project\\HelloGit\\src\\drivers\\chromedriver.exe");
 			driver=new ChromeDriver();
 		}
 		

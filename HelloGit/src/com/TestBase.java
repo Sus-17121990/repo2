@@ -26,9 +26,9 @@ public class TestBase {
 		  
 		if(webBrowser.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "G:\\workspace\\project\\HelloGit\\src\\drivers\\chromedriver.exe");
-			ChromeOptions options=new ChromeOptions();
-			options.addArguments("--incognito");
-			driver=new ChromeDriver(options);
+			//ChromeOptions options=new ChromeOptions();
+			//options.addArguments("--incognito");
+			driver=new ChromeDriver();
 		}
 		
 		if(webBrowser.equals("ie")){

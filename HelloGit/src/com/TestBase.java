@@ -2,6 +2,7 @@ package com;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.Parameters;
@@ -25,7 +26,9 @@ public class TestBase {
 		  
 		if(webBrowser.equals("chrome")){
 			System.setProperty("webdriver.chrome.driver", "G:\\workspace\\project\\HelloGit\\src\\drivers\\chromedriver.exe");
-			driver=new ChromeDriver();
+			ChromeOptions options=new ChromeOptions();
+			options.addArguments("--incognito");
+			driver=new ChromeDriver(options);
 		}
 		
 		if(webBrowser.equals("ie")){

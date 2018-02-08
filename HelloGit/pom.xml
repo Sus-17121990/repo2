@@ -4,26 +4,37 @@
   <artifactId>HelloGit</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
+<properties>
+ <testng.version>6.14.2</testng.version>
+ <common.io>2.6</common.io>
+ <Selenium.Java>3.8.1</Selenium.Java>
+ <reportng>1.1.4</reportng>
+ <jcommander>1.72</jcommander>
+ <velocity-dep>1.4</velocity-dep>
+ <maven-surefire-plugin>2.20.1</maven-surefire-plugin>
+ <source>1.8</source>
+ <target>1.8</target>
+</properties>
   <dependencies>
 <!-- https://mvnrepository.com/artifact/org.testng/testng -->
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>6.14.2</version>
+    <version>${testng.version}</version>
     <scope>test</scope>
 </dependency>
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 <dependency>
     <groupId>commons-io</groupId>
     <artifactId>commons-io</artifactId>
-    <version>2.6</version>
+    <version>${common.io}</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
-    <version>3.8.1</version>
+    <version>${Selenium.Java}</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
 <!--  <dependency>
@@ -35,19 +46,19 @@
 <dependency>
     <groupId>org.uncommons</groupId>
     <artifactId>reportng</artifactId>
-    <version>1.1.4</version>
+    <version>${reportng}</version>
     <scope>test</scope>
 </dependency><!-- https://mvnrepository.com/artifact/com.beust/jcommander -->
 <dependency>
     <groupId>com.beust</groupId>
     <artifactId>jcommander</artifactId>
-    <version>1.72</version>
+    <version>${jcommander}</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/velocity/velocity-dep -->
 <dependency>
     <groupId>velocity</groupId>
     <artifactId>velocity-dep</artifactId>
-    <version>1.4</version>
+    <version>${velocity-dep}</version>
 </dependency>
 </dependencies>
  <build>
@@ -56,7 +67,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.20.1</version>
+        <version>${maven-surefire-plugin}</version>
         <configuration>
           <suiteXmlFiles>
             <suiteXmlFile>testng.xml</suiteXmlFile>
@@ -66,8 +77,8 @@
        <plugin>
 	<artifactId>maven-compiler-plugin</artifactId>
 		<configuration>
-			<source>1.8</source>
-			<target>1.8</target>
+			<source>${source}</source>
+			<target>${target}</target>
 		</configuration>
 </plugin>
  </plugins>
